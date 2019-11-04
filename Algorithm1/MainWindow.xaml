@@ -5,11 +5,67 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Algorithm1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="button" Content="Clone" HorizontalAlignment="Left" Margin="71,104,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Label x:Name="label" Content="" HorizontalAlignment="Left" Margin="71,176,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="input" HorizontalAlignment="Left" Height="23" Margin="71,43,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        Title="MainWindow" Height="724.266" Width="866.027">
+    <Grid Margin="0,0,0,5.4">
+        <TextBlock HorizontalAlignment="Left" Margin="397,10,0,0" TextWrapping="Wrap" Text="Лабораторна робота №1" VerticalAlignment="Top"/>
+        <Grid HorizontalAlignment="Left" Height="81" Margin="10,44,0,0" VerticalAlignment="Top" Width="840">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="122*"/>
+                <ColumnDefinition Width="103*"/>
+                <ColumnDefinition Width="592*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="a0" HorizontalAlignment="Left" Height="23" Margin="10,48,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="79"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,32,0,0" TextWrapping="Wrap" Text="a0" VerticalAlignment="Top" RenderTransformOrigin="0.889,2.036"/>
+            <TextBox x:Name="a1" HorizontalAlignment="Left" Height="23" Margin="89,48,0,0" TextWrapping="Wrap" Text="-26" VerticalAlignment="Top" Width="79" Grid.ColumnSpan="2"/>
+            <TextBlock HorizontalAlignment="Left" Margin="89,30,0,0" TextWrapping="Wrap" Text="a1" VerticalAlignment="Top"/>
+            <TextBox x:Name="a2" HorizontalAlignment="Left" Height="23" Margin="46.002,48,0,0" TextWrapping="Wrap" Text="-84" VerticalAlignment="Top" Width="79" Grid.ColumnSpan="2" Grid.Column="1"/>
+            <TextBlock HorizontalAlignment="Left" Margin="47.002,32,0,0" TextWrapping="Wrap" Text="a2" VerticalAlignment="Top" Grid.Column="1"/>
+            <TextBox x:Name="a3" HorizontalAlignment="Left" Height="23" Margin="22.2,48,0,0" TextWrapping="Wrap" Text="555" VerticalAlignment="Top" Width="79" Grid.Column="2"/>
+            <TextBlock HorizontalAlignment="Left" Margin="22.2,27,0,0" TextWrapping="Wrap" Text="a3" VerticalAlignment="Top" Grid.Column="2"/>
+            <TextBox x:Name="a4" HorizontalAlignment="Left" Height="23" Margin="102.2,48,0,0" TextWrapping="Wrap" Text="499" VerticalAlignment="Top" Width="79" Grid.Column="2"/>
+            <TextBlock HorizontalAlignment="Left" Margin="102.2,32,0,0" TextWrapping="Wrap" Text="a4" VerticalAlignment="Top" Grid.Column="2"/>
+            <TextBox x:Name="a5" HorizontalAlignment="Left" Height="23" Margin="182.2,48,0,0" TextWrapping="Wrap" Text="-991" VerticalAlignment="Top" Width="79" Grid.Column="2"/>
+            <TextBlock HorizontalAlignment="Left" Margin="182.2,32,0,0" TextWrapping="Wrap" Text="a5" VerticalAlignment="Top" Grid.Column="2"/>
+            <TextBox x:Name="a6" HorizontalAlignment="Left" Height="23" Margin="263.2,48,0,0" TextWrapping="Wrap" Text="-838" VerticalAlignment="Top" Width="79" Grid.Column="2"/>
+            <TextBlock HorizontalAlignment="Left" Margin="263.2,32,0,0" TextWrapping="Wrap" Text="a6" VerticalAlignment="Top" Grid.Column="2"/>
+            <TextBox x:Name="a7" HorizontalAlignment="Left" Height="23" Margin="343.2,48,0,0" TextWrapping="Wrap" Text="32" VerticalAlignment="Top" Width="79" Grid.Column="2"/>
+            <TextBlock HorizontalAlignment="Left" Margin="343.2,32,0,0" TextWrapping="Wrap" Text="a7" VerticalAlignment="Top" Grid.Column="2"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,9,0,0" TextWrapping="Wrap" Text="Завдання 1. Запишіть свої коефіцієнти алгебраїчного рівняння" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="61" Margin="10,130,0,0" VerticalAlignment="Top" Width="840">
+            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Завдання 2. Обрахувати рівняння " VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,35,0,0" TextWrapping="Wrap" Text="Exp(Pow(x, 5)) + Sin(x) - 10x = Pow(x, 9) - Sin(Cos(x))" VerticalAlignment="Top"/>
+            <TextBox x:Name="t2_from" HorizontalAlignment="Left" Height="23" Margin="422,28,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="109"/>
+            <Label Content="Від" HorizontalAlignment="Left" Margin="375,24,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="t2_to" HorizontalAlignment="Left" Height="23" Margin="572,28,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label Content="До" HorizontalAlignment="Left" Margin="541,24,0,0" VerticalAlignment="Top"/>
+        </Grid>
+        <Button x:Name="button1" Content="Вирахувати" Margin="491,352,294,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Grid HorizontalAlignment="Left" Height="61" Margin="10,196,0,0" VerticalAlignment="Top" Width="840">
+            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Завдання 3. Обрахувати рівняння " VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,35,0,0" TextWrapping="Wrap" Text="Pow(Sin(x), 2) + Pow(x, 4) - Pow(x, 2) = Pow(Cos(X), 2) + 13x + 10" VerticalAlignment="Top"/>
+            <TextBox x:Name="t3_from" HorizontalAlignment="Left" Height="23" Margin="422,28,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="109"/>
+            <Label Content="Від" HorizontalAlignment="Left" Margin="375,24,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="t3_to" HorizontalAlignment="Left" Height="23" Margin="572,28,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Label Content="До" HorizontalAlignment="Left" Margin="541,24,0,0" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="114" Margin="10,257,0,0" VerticalAlignment="Top" Width="95">
+            <Label Content="Завдання" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="r4"  Content="1" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" IsChecked="True"/>
+            <RadioButton x:Name="r5" Content="2" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.345,0.48"/>
+            <RadioButton x:Name="r6" Content="3" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.168,1.362"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="114" Margin="105,257,0,0" VerticalAlignment="Top" Width="253">
+            <Label Content="Метод для уточнення" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="r1" GroupName="method" Content="Метод простих ітерацій" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" IsChecked="True" />
+            <RadioButton x:Name="r2" GroupName="method"  Content="Метод Хорд" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.345,0.48"/>
+            <RadioButton x:Name="r3" GroupName="method" Content="Комбінований метод хорд-дотичних" HorizontalAlignment="Left" Margin="10,81,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.168,1.362"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="100" Margin="363,271,0,0" VerticalAlignment="Top" Width="123">
+            <Label Content="Степінь точності" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="accuracy" HorizontalAlignment="Left" Height="23" Margin="10,31,0,0" TextWrapping="Wrap" Text="-7" VerticalAlignment="Top" Width="101"/>
+        </Grid>
+        <TextBlock x:Name="output" HorizontalAlignment="Left" Margin="10,376,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="303" Width="840" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 
     </Grid>
 </Window>

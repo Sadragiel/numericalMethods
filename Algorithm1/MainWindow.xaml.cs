@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-using Algorithm1.Scripts;
+using Algorithm1.Factory;
 
 namespace Algorithm1
 {
@@ -22,7 +22,7 @@ namespace Algorithm1
     /// </summary>
     public partial class MainWindow : Window
     {
-        Graeffe Graeffe;
+        
 
         public MainWindow()
         {
@@ -31,32 +31,15 @@ namespace Algorithm1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            List<double> list = new List<double>();
-            list.Add(1);
-            list.Add(-35);
-            list.Add(380);
-            list.Add(-1350);
-            list.Add(1000);
-
-            this.Graeffe = new Graeffe(list, -1);
-            List<double> res = this.Graeffe.Process();
-            string resStr = "steps: " + this.Graeffe.iterationCounter + "\n";
-            for(int i = 0; i < res.Count; i++)
+            try
             {
-                resStr += "x" + i.ToString() + " = " + res[i].ToString() + ", \n";
+                FactoryMethod.ExecuteMainWindowTask(this);
             }
-            label.Content = resStr;
-
-            Chord chord = new Chord(
-                    res[0] + 0.01, res[0] - 0.01,
-                    this.Graeffe.GetFuncValue,
-                    (double x) => this.Graeffe.getDerivativeValue(x, 2),
-                    -7
-                );
-            double res2 = chord.Process();
-            resStr = "\n Chord steps: " + chord.iterationCounter + "\n";
-            resStr += "x1 = " + res2.ToString() + "\n";
-            label.Content += resStr;
+            catch(Exception except)
+            {
+                this.output.Text += "\n\nСталася невідома помилка: " + except.Message;
+            }
         }
+
     }
 }

@@ -26,14 +26,35 @@ namespace Algorithm1.Scripts
                 this.currentCoefficient.Add(this.coefficient[i]);
         }
 
+        private void Log(MainWindow mw)
+        {
+            mw.output.Text += String.Format("Ітерація № {{0}}: \n  ", this.iterationCounter);
+            String str = "";
+            for(int i = 0; i < this.currentCoefficient.Count; i++)
+            {
+                str += this.currentCoefficient[i] + " * x^(" + (this.currentCoefficient.Count - i) + ") + ";
+            }
+            mw.output.Text += "Рівняння поточної ітерації: \n  " + str;
+            str = "";
+            for(int i = 0; i < this.roots.Count; i++)
+            {
+                str += "x" + i + " = " + this.roots[i] + ";\n";
+            }
+
+            mw.output.Text += "Корені поточної ітерації: \n  " + str;
+
+            mw.output.Text += "Критерій зупинки: Корені наступного рівняння наближено дорівнюють квадратам кореням попереднього рівняння (через довжину вектора)\n  " + this.Check();
+        }
+
         //Return array of the aquatoon roots
-        public List<double> Process()
+        public List<double> Process(MainWindow mw)
         {
             this.iterationCounter = 0;
             do
             {
                 this.Iteration();
                 this.CoumputeRootes();
+                this.Log(mw);
             }
             while (!this.Check());
             return this.roots;

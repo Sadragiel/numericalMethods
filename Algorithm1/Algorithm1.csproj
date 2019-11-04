@@ -55,9 +55,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Factory\FactoryMethod.cs" />
     <Compile Include="Scripts\Chord.cs" />
+    <Compile Include="Scripts\CombinationMethod.cs" />
     <Compile Include="Scripts\Fourier.cs" />
     <Compile Include="Scripts\Graeffe.cs" />
+    <Compile Include="Scripts\Method.cs" />
+    <Compile Include="Scripts\SimpleIterations.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

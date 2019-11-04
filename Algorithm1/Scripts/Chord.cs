@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace Algorithm1.Scripts
 {
-    class Chord
+    class Chord : Method
     {
         double leftBound;
         double rightBound; 
         Func<double, double> func;
-        int accuracyOrder;
-
-        public int iterationCounter;
-
         public Chord(double leftBound, double rightBound, Func<double, double> func, Func<double, double> ddfunc, int accuracyOrder)
+            :base(accuracyOrder)
         {
             this.rightBound = rightBound;
             this.leftBound = leftBound;
@@ -26,20 +23,9 @@ namespace Algorithm1.Scripts
                 this.rightBound -= this.leftBound;
             }
             this.func = func;
-            this.accuracyOrder = accuracyOrder;
         }
 
-        public double Process()
-        {
-            this.iterationCounter = 0;
-            do
-            {
-                this.Iteration();
-            } while (!this.Check());
-            return this.leftBound;
-        }
-
-        public void Iteration()
+        protected override void Iteration()
         {
             iterationCounter++;
             this.leftBound = this.leftBound -
@@ -47,12 +33,14 @@ namespace Algorithm1.Scripts
                 / (this.func(this.rightBound) - this.func(this.leftBound));
         }
 
-        private bool Check()
+        protected override bool Check()
         {
-            double res = this.func(this.leftBound);
-            return Math.Abs(res) < Math.Pow(10, this.accuracyOrder);
+            return Math.Abs(this.func(this.leftBound)) < Math.Pow(10, this.accuracyOrder);
         }
 
-
+        protected override double GetRoot()
+        {
+            return this.leftBound;
+        }
     }
 }
