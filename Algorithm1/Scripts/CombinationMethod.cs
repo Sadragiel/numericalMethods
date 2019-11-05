@@ -50,5 +50,16 @@ namespace Algorithm1.Scripts
             return Math.Abs(this.func(this.leftBound)) < Math.Pow(10, this.accuracyOrder)
                 || Math.Abs(this.func(this.rightBound)) < Math.Pow(10, this.accuracyOrder);
         }
+
+        protected override void CheckLog(MainWindow mw)
+        {
+            string str = "Для лівої межі: \n";
+            str +="f(x " + this.iterationCounter + ") <  10^(" + this.accuracyOrder + ") =>  " + this.Check() + "\n";
+            str += Math.Abs(this.func(this.leftBound)) + " < " + Math.Pow(10, this.accuracyOrder) + ") =>  " + this.Check() + "\n";
+            str += "Для правої межі: \n";
+            str += "f(x " + this.iterationCounter + ") <  10^(" + this.accuracyOrder + ") =>  " + this.Check() + "\n";
+            str += Math.Abs(this.func(this.rightBound)) + " < " + Math.Pow(10, this.accuracyOrder) + ") =>  " + this.Check() + "\n";
+            mw.output.Text += str;
+        }
     }
 }

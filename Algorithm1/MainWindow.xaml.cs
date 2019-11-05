@@ -40,6 +40,5 @@ namespace Algorithm1
                 this.output.Text += "\n\nСталася невідома помилка: " + except.Message;
             }
         }
-
     }
 }

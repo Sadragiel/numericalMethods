@@ -24,15 +24,15 @@ namespace Algorithm1.Scripts
 
         private void Log(MainWindow mw)
         {
-            mw.output.Text += String.Format(
-                "Ітерація № {{0}}: \n  " +
-                "x{{0}} = {{1}} \n  " +
-                "Перевіримо критерій зупинки: \n" +
-                "f(x{{0}}) < {{2}} => {{3}}\n", this.iterationCounter, this.GetRoot(), this.accuracyOrder, this.Check().ToString());
+            mw.output.Text +=
+                "\nІтерація № " + this.iterationCounter + ": \n" +
+                "x " + this.iterationCounter + " =  " + this.GetRoot() + " \n  " +
+                "Перевіримо критерій зупинки: \n";
+            this.CheckLog(mw);
             if (this.Check())
                 mw.output.Text += "Можемо зупинити ітераційний процес \n";
             else
-                mw.output.Text += "Продовжуємо ітераційний процес \n";
+                mw.output.Text += "Продовжуємо ітераційний процес \n \n";
         }
 
         public double Process(MainWindow mw)
@@ -48,5 +48,6 @@ namespace Algorithm1.Scripts
         protected abstract void Iteration();
         protected abstract double GetRoot();
         protected abstract bool Check();
+        protected abstract void CheckLog(MainWindow mw);
     }
 }

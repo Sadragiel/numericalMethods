@@ -50,9 +50,9 @@ namespace Algorithm1.Factory
         {
             
 
-            int taskNumber = mw.r1.IsChecked == true ? 1 : mw.r2.IsChecked == true ? 2 : 3;
-            String methodName = mw.r4.IsChecked == true ? (String)mw.r4.Content :
-                mw.r5.IsChecked == true ? (String)mw.r5.Content : (String)mw.r6.Content;
+            int taskNumber = mw.r4.IsChecked == true ? 1 : mw.r5.IsChecked == true ? 2 : 3;
+            String methodName = mw.r1.IsChecked == true ? (String)mw.r1.Content :
+                mw.r2.IsChecked == true ? (String)mw.r2.Content : (String)mw.r3.Content;
 
             mw.output.Text = "Завдання номер " + taskNumber + "\n";
 

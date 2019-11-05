@@ -7,7 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="724.266" Width="866.027">
     <Grid Margin="0,0,0,5.4">
-        <TextBlock HorizontalAlignment="Left" Margin="397,10,0,0" TextWrapping="Wrap" Text="Лабораторна робота №1" VerticalAlignment="Top"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="421*"/>
+            <RowDefinition Height="268*"/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Left" Margin="397,10,0,0" TextWrapping="Wrap" Text="Лабораторна робота №1" VerticalAlignment="Top" Height="16" Width="139"/>
         <Grid HorizontalAlignment="Left" Height="81" Margin="10,44,0,0" VerticalAlignment="Top" Width="840">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="122*"/>
@@ -35,18 +40,18 @@
         <Grid HorizontalAlignment="Left" Height="61" Margin="10,130,0,0" VerticalAlignment="Top" Width="840">
             <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Завдання 2. Обрахувати рівняння " VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="10,35,0,0" TextWrapping="Wrap" Text="Exp(Pow(x, 5)) + Sin(x) - 10x = Pow(x, 9) - Sin(Cos(x))" VerticalAlignment="Top"/>
-            <TextBox x:Name="t2_from" HorizontalAlignment="Left" Height="23" Margin="422,28,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="109"/>
+            <TextBox x:Name="t2_from" HorizontalAlignment="Left" Height="23" Margin="422,28,0,0" TextWrapping="Wrap" Text="0,2" VerticalAlignment="Top" Width="109"/>
             <Label Content="Від" HorizontalAlignment="Left" Margin="375,24,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="t2_to" HorizontalAlignment="Left" Height="23" Margin="572,28,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="t2_to" HorizontalAlignment="Left" Height="23" Margin="572,28,0,0" TextWrapping="Wrap" Text="0,22" VerticalAlignment="Top" Width="120"/>
             <Label Content="До" HorizontalAlignment="Left" Margin="541,24,0,0" VerticalAlignment="Top"/>
         </Grid>
-        <Button x:Name="button1" Content="Вирахувати" Margin="491,352,294,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button x:Name="button1" Content="Вирахувати" Margin="491,352,294,0" VerticalAlignment="Top" Click="Button_Click" Height="19"/>
         <Grid HorizontalAlignment="Left" Height="61" Margin="10,196,0,0" VerticalAlignment="Top" Width="840">
             <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Завдання 3. Обрахувати рівняння " VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="10,35,0,0" TextWrapping="Wrap" Text="Pow(Sin(x), 2) + Pow(x, 4) - Pow(x, 2) = Pow(Cos(X), 2) + 13x + 10" VerticalAlignment="Top"/>
-            <TextBox x:Name="t3_from" HorizontalAlignment="Left" Height="23" Margin="422,28,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="109"/>
+            <TextBox x:Name="t3_from" HorizontalAlignment="Left" Height="23" Margin="422,28,0,0" TextWrapping="Wrap" Text="-0,8" VerticalAlignment="Top" Width="109"/>
             <Label Content="Від" HorizontalAlignment="Left" Margin="375,24,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="t3_to" HorizontalAlignment="Left" Height="23" Margin="572,28,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="t3_to" HorizontalAlignment="Left" Height="23" Margin="572,28,0,0" TextWrapping="Wrap" Text="-0,78" VerticalAlignment="Top" Width="120"/>
             <Label Content="До" HorizontalAlignment="Left" Margin="541,24,0,0" VerticalAlignment="Top"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="114" Margin="10,257,0,0" VerticalAlignment="Top" Width="95">
@@ -65,7 +70,7 @@
             <Label Content="Степінь точності" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="accuracy" HorizontalAlignment="Left" Height="23" Margin="10,31,0,0" TextWrapping="Wrap" Text="-7" VerticalAlignment="Top" Width="101"/>
         </Grid>
-        <TextBlock x:Name="output" HorizontalAlignment="Left" Margin="10,376,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="303" Width="840" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        <TextBox x:Name="output" HorizontalAlignment="Left" Height="249" Margin="10,9.2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="840"/>
 
     </Grid>
 </Window>

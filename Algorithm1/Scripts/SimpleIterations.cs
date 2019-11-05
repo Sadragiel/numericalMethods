@@ -37,5 +37,13 @@ namespace Algorithm1.Scripts
         {
             return this.x;
         }
+
+        protected override void CheckLog(MainWindow mw)
+        {
+            string str = "f(x " + this.iterationCounter + ") <  10^(" + this.accuracyOrder + ") =>  " + this.Check() + "\n";
+            str += Math.Abs(this.func(this.x)) + " < " + Math.Pow(10, this.accuracyOrder) + ") =>  " + this.Check() + "\n";
+            mw.output.Text += str;
+
+        }
     }
 }

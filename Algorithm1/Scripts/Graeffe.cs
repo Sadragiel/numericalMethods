@@ -32,9 +32,9 @@ namespace Algorithm1.Scripts
             String str = "";
             for(int i = 0; i < this.currentCoefficient.Count; i++)
             {
-                str += this.currentCoefficient[i] + " * x^(" + (this.currentCoefficient.Count - i) + ") + ";
+                str += this.currentCoefficient[i] + " * x^(" + (this.currentCoefficient.Count -  i - 1) + ") + ";
             }
-            mw.output.Text += "Рівняння поточної ітерації: \n  " + str;
+            mw.output.Text += "\nРівняння поточної ітерації: \n  " + str;
             str = "";
             for(int i = 0; i < this.roots.Count; i++)
             {
