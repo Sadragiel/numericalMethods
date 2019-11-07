@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using Algorithm1.Factory;
+using Algorithm1.Scripts;
 
 namespace Algorithm1
 {
@@ -35,7 +36,7 @@ namespace Algorithm1
             {
                 FactoryMethod.ExecuteMainWindowTask(this);
             }
-            catch(Exception except)
+            catch (Exception except)
             {
                 this.output.Text += "\n\nСталася невідома помилка: " + except.Message;
             }

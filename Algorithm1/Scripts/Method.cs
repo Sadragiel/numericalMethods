@@ -38,16 +38,30 @@ namespace Algorithm1.Scripts
         public double Process(MainWindow mw)
         {
             this.iterationCounter = 0;
+            Func<bool> simpleCheck;
             do
             {
+
+                simpleCheck  = this.SimpleCheck(this.GetRoot());
                 this.Iteration();
                 this.Log(mw);
-            } while (!this.Check());
+            } while (!this.Check() && !simpleCheck());
             return this.GetRoot();
         }
         protected abstract void Iteration();
         protected abstract double GetRoot();
         protected abstract bool Check();
+
+        //This function should stop the iteration process   
+        //in the case when the root cannot be changed       
+        //because of machine limitation 
+        protected Func<bool> SimpleCheck(double previosRoot)
+        {
+            int finalNumberOfIterations = 500;
+            return () => this.iterationCounter > finalNumberOfIterations
+                && Math.Abs(previosRoot - this.GetRoot()) < Math.Pow(10, this.accuracyOrder);
+        }
+
         protected abstract void CheckLog(MainWindow mw);
     }
 }
