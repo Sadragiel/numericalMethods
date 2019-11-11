@@ -121,7 +121,7 @@ namespace Algorithm1.Factory
             {
                 case "Метод простих ітерацій":
                     {
-                        return new SimpleIterations(lb, rb, f, ddf, acc);
+                        return new SimpleIterations(lb, rb, f, df, ddf, acc);
                     }
                 case "Метод Хорд":
                     {

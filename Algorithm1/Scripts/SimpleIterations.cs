@@ -10,14 +10,20 @@ namespace Algorithm1.Scripts
     {
         double x;
         double coef;
+        double accuracyCoef;
         Func<double, double> func;
 
-        public SimpleIterations(double leftBound, double rightBound, Func<double, double> func, Func<double, double> ddfunc, int accuracyOrder) 
+        public SimpleIterations(double leftBound, double rightBound, Func<double, double> func, Func<double, double> dfunc, Func<double, double> ddfunc, int accuracyOrder) 
             : base(accuracyOrder)
         {
             //Bounds are legal
             //Coef == 1 / first Derivative of Function 
-            this.coef =  (rightBound - leftBound) / (func(rightBound) - func(leftBound));
+            double dFunkLeftValue = dfunc(leftBound);
+            double dFunkRightValue = dfunc(rightBound);
+            double derivativeMin = Math.Min(dFunkLeftValue, dFunkRightValue);
+            double derivativeMax = Math.Max(dFunkLeftValue, dFunkRightValue);
+            this.coef = 2 / (derivativeMin + derivativeMax);
+            this.accuracyCoef = (derivativeMax - derivativeMin) / (derivativeMax + derivativeMin);
             this.x = Fourier.Rule(func, ddfunc, leftBound) ? leftBound : rightBound;
             this.func = func;
         }
@@ -30,7 +36,7 @@ namespace Algorithm1.Scripts
 
         protected override bool Check()
         {
-            return Math.Abs(this.func(this.x)) < Math.Pow(10, this.accuracyOrder);
+            return Math.Abs(this.func(this.x)) < Math.Abs((1 - this.accuracyCoef) / this.accuracyCoef) * Math.Pow(10, this.accuracyOrder);
         }
 
         protected override double GetRoot()
@@ -40,8 +46,18 @@ namespace Algorithm1.Scripts
 
         protected override void CheckLog(MainWindow mw)
         {
-            string str = "f(x " + this.iterationCounter + ") <  10^(" + this.accuracyOrder + ") =>  " + this.Check() + "\n";
-            str += Math.Abs(this.func(this.x)) + " < " + Math.Pow(10, this.accuracyOrder) + ") =>  " + this.Check() + "\n";
+            string str = "q = " 
+                + this.accuracyCoef
+                + "f(x " + this.iterationCounter 
+                + ") < |(1 - q) / q| * 10^(" 
+                + this.accuracyOrder 
+                + ") =>  " 
+                + this.Check() 
+                + "\n"
+                + Math.Abs(this.func(this.x)) 
+                + " < " 
+                + Math.Abs((1 - this.accuracyCoef) / this.accuracyCoef) * Math.Pow(10, this.accuracyOrder) 
+                + ") =>  " + this.Check() + "\n";
             mw.output.Text += str;
 
         }

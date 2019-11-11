@@ -66,7 +66,7 @@ namespace Algorithm1.Scripts
             for (int i = 0; i < this.currentCoefficient.Count - 1; i++)
             {
                 this.roots.Add(
-                    -Math.Pow(this.currentCoefficient[i + 1] / this.currentCoefficient[i],
+                    Math.Pow(this.currentCoefficient[i + 1] / this.currentCoefficient[i],
                     Math.Pow(2, -this.iterationCounter)
                     )
                 );
