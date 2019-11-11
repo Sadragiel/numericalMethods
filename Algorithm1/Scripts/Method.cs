@@ -12,6 +12,8 @@ namespace Algorithm1.Scripts
 
         protected int iterationCounter;
 
+        protected double previosRoot;
+
         public int IterationCounter
         {
             get => this.iterationCounter;
@@ -41,11 +43,10 @@ namespace Algorithm1.Scripts
             Func<bool> simpleCheck;
             do
             {
-
-                simpleCheck  = this.SimpleCheck(this.GetRoot());
+                this.previosRoot = this.GetRoot();
                 this.Iteration();
                 this.Log(mw);
-            } while (!this.Check() && !simpleCheck());
+            } while (!this.Check() && !this.SimpleCheck());
             return this.GetRoot();
         }
         protected abstract void Iteration();
@@ -55,11 +56,11 @@ namespace Algorithm1.Scripts
         //This function should stop the iteration process   
         //in the case when the root cannot be changed       
         //because of machine limitation 
-        protected Func<bool> SimpleCheck(double previosRoot)
+        protected bool SimpleCheck()
         {
             int finalNumberOfIterations = 500;
-            return () => this.iterationCounter > finalNumberOfIterations
-                && Math.Abs(previosRoot - this.GetRoot()) < Math.Pow(10, this.accuracyOrder);
+            return this.iterationCounter > finalNumberOfIterations
+                && Math.Abs(this.previosRoot - this.GetRoot()) < Math.Pow(10, this.accuracyOrder);
         }
 
         protected abstract void CheckLog(MainWindow mw);

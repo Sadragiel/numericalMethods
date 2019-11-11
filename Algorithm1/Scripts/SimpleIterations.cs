@@ -36,7 +36,7 @@ namespace Algorithm1.Scripts
 
         protected override bool Check()
         {
-            return Math.Abs(this.func(this.x)) < Math.Abs((1 - this.accuracyCoef) / this.accuracyCoef) * Math.Pow(10, this.accuracyOrder);
+            return Math.Abs(this.x - this.previosRoot) < Math.Abs((1 - this.accuracyCoef) / this.accuracyCoef) * Math.Pow(10, this.accuracyOrder);
         }
 
         protected override double GetRoot()
@@ -54,7 +54,7 @@ namespace Algorithm1.Scripts
                 + ") =>  " 
                 + this.Check() 
                 + "\n"
-                + Math.Abs(this.func(this.x)) 
+                + Math.Abs(this.x - this.previosRoot) 
                 + " < " 
                 + Math.Abs((1 - this.accuracyCoef) / this.accuracyCoef) * Math.Pow(10, this.accuracyOrder) 
                 + ") =>  " + this.Check() + "\n";
